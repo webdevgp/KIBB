@@ -1,0 +1,239 @@
+/* About page styles. Load after the shared style.css. */
+.kibb-about {
+    --about-forest: #1d331e;
+    --about-olive: #5a5a2f;
+    --about-cream: #dddeb4;
+    --about-paper: #e3e2dd;
+    --about-red: #8b2423;
+    --about-gold: #e4bf68;
+    --about-gutter: clamp(20px, 5vw, 56px);
+}
+
+.kibb-about .about-skip {
+    position: absolute;
+    z-index: 10;
+    top: 8px;
+    left: 8px;
+    padding: 12px 16px;
+    transform: translateY(-150%);
+    background: var(--about-forest);
+    color: var(--about-paper);
+}
+
+.kibb-about .about-skip:focus {
+    transform: none;
+}
+
+.kibb-about [aria-current="page"] {
+    text-decoration: underline;
+    text-underline-offset: 0.28em;
+}
+
+.kibb-about main {
+    background-color: var(--about-cream);
+    color: var(--about-forest);
+}
+
+.kibb-about main :is(h1, h2) {
+    margin: 0 0 20px;
+    color: var(--about-olive);
+    font-family: "Boldonse", "Arial Black", sans-serif;
+    font-size: clamp(1.45rem, 3vw, 2.15rem);
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.kibb-about main p {
+    margin: 0 0 16px;
+    line-height: 1.55;
+}
+
+.kibb-about :is(.about-intro, .about-story, .about-values, .about-services, .about-cta) {
+    padding: clamp(36px, 6vw, 72px) var(--about-gutter);
+}
+
+.kibb-about :is(.about-intro, .about-story) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: clamp(24px, 5vw, 56px);
+}
+
+.kibb-about main h1 {
+    font-size: clamp(1.85rem, 4.4vw, 3rem);
+}
+
+.kibb-about .about-intro p {
+    font-size: clamp(1.06rem, 2.15vw, 1.45rem);
+    margin-bottom: 24px;
+}
+
+.kibb-about :is(.about-hero-photo, .story-photo) {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.kibb-about .about-hero-photo {
+    max-width: 420px;
+    justify-self: center;
+    border-radius: 50%;
+}
+
+.kibb-about .about-story {
+    background: var(--about-olive);
+    color: var(--about-paper);
+}
+
+.kibb-about .about-story h2 {
+    color: var(--about-gold);
+    scroll-margin-top: 24px;
+}
+
+.kibb-about .story-photo {
+    aspect-ratio: 5 / 4;
+    object-position: center 44%;
+    border-radius: 36px;
+}
+
+.kibb-about .story-text p:last-child {
+    margin-bottom: 0;
+}
+
+.kibb-about :is(.about-values, .about-services, .about-cta) h2,
+.kibb-about .about-cta {
+    text-align: center;
+}
+
+.kibb-about :is(.value-list, .service-list) {
+    display: grid;
+    gap: 16px;
+    margin: 28px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.kibb-about .value-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.kibb-about .service-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.kibb-about :is(.value-list, .service-list) li {
+    padding: 24px 18px;
+    border-radius: 28px;
+}
+
+.kibb-about .value-list li {
+    background: var(--about-paper);
+    text-align: center;
+}
+
+.kibb-about .value-icon {
+    display: inline-grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 16px;
+    border-radius: 50%;
+    background: var(--about-forest);
+    color: var(--about-gold);
+    font-size: 22px;
+}
+
+.kibb-about main h3 {
+    margin: 0 0 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.kibb-about :is(.value-list, .service-list) p {
+    margin: 0;
+}
+
+.kibb-about .about-services {
+    background: var(--about-forest);
+    color: var(--about-paper);
+}
+
+.kibb-about .about-services :is(h2, h3) {
+    color: var(--about-gold);
+}
+
+.kibb-about .service-list li {
+    background: var(--about-olive);
+}
+
+.kibb-about .service-action {
+    margin-top: 28px;
+    text-align: center;
+}
+
+.kibb-about .about-cta p {
+    max-width: 54ch;
+    margin: 0 auto 24px;
+}
+
+.kibb-about .cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.kibb-about main .button {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 24px;
+    border-radius: 999px;
+    background: var(--about-red);
+    color: var(--about-paper);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.kibb-about main .button:hover {
+    text-decoration: underline;
+}
+
+.kibb-about main .button:focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: -5px;
+}
+
+.kibb-about main :is(.about-services .button, .button-light) {
+    background: var(--about-gold);
+    color: var(--about-forest);
+}
+
+@media (max-width: 900px) {
+    .kibb-about .value-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 660px) {
+    .kibb-about :is(.about-intro, .about-story, .service-list) {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .kibb-about .about-hero-photo {
+        max-width: 300px;
+    }
+
+    .kibb-about .story-text {
+        order: -1;
+    }
+}
+
+@media (max-width: 380px) {
+    .kibb-about .value-list {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
